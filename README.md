@@ -1,72 +1,31 @@
-Monty Interpreter   
-=======================
-These is monty interpreter built on C language and complient with ```ISO90```,```ISO099```. ```&ISO11```.it reads monty bytcode files
-of any extension.However I prefer if you use ```.m``` extension.
+# 0x18. C - Stacks, Queues - LIFO, FIFO
 
-monty can run as either a stack (LIFO) or queue(FIFO).Mode can be switched mid-script. the interpreter 
-can handle a varity opcodes, including printing, mathmatical operations, and more all handled opcodes are listed below.
+## Description
 
- :runner: Getting Started
-----------------------------
-- Ubuntu 14.04 LTS - operating system required
-- GCC 4.8.4 - Compiler used
+This Holberton School project is a custom ByteCode interpreter, coded in C.
+Compilation:
+```gcc -Wall -Werror -Wextra -pedantic *.c -o monty```
+Usage:
+```./monty byte_file.m```
 
-:zap: How to install
-------------------------
-clone these repository to your machine:
-```
-$ git clone https://github.com/Fraol123/monty.git
-```
-compile with the following:
-```
-gcc -Wall -Werror -Wextra -pedantic *.c -o monty
-```
-Run monty on file:
-```
-./monty file.m
-```
-:wrench: Monty Opcodes
------------------------------
-- push
-   - Usage:```push <int>```
-   - pushes an element to the stack
-   - The parameter ```<int>``` must be an integer
-- pall
-   - prints value in stack/queus, starting fromm the top.
-- pint
-   - prints the top value of the stack\queus.
-- pop
-   - Removes the top element of the stack\queus.
-- swap
-   -swaps the top two element of stack\queue
-- nop
-  - does nothing
-- add
- - Adds the top two elements of the stack\queue
- - The result is stored in the second element from the top and the top element is poped
-- sub
-  - subtracts the top two elements of the stack\queue
-  - the result is stored in the second element from the top and the top element is poped 
-- div
-  - divides the top two elements of stack\queue
-  - takes zero's error in considaration
-- mul
-  - multiplies the top two elements of stack\queue
-- mod
-  - modules of the top two elements of stack\queue
+The program reads from the file "byte_file.m" that contains one instruction per line.
+It then calls the right function to modify a stack according to the instruction.
+It prints custom error messages if the instruction is wrong.
 
-:postbox: opcode preceded by ```#``` are treted as comment
+## Table of contents
 
-:blue_book: AUTHOR
--------------------
-:computer:Fraol Tolera 
-
-:trumpet: Acknowldgement
----------------------------- 
-
-- Holberton School- for giving these challenging project and providing guidlines
-- ALX- sensei 
-- stack overflow - providing solution as needed
-
- 
- 
+File | Description
+---- | -----------
+[main.c](./main.c) | entry point of the program
+[monty.h](./monty.h) | main header file
+[lists.h](./lists.h) | header file for the lists functions
+[get_func.c](./get_func.c) | function that picks the right function for the instruction
+[handler_funcs1.c](./handler_funcs1.c) | handler functions for the instructions
+[handler_funcs2.c](./handler_funcs2.c) | handler functions for the instructions
+[handler_funcs3.c](./handler_funcs3.c) | handler functions for the instructions
+[list_funcs1.c](./list_funcs1.c) | doubly linked list functions
+[list_funcs2.c](./list_funcs2.c) | doubly linked list functions
+[strtow.c](./strtow.c) | string tokenizing functions
+[free.c](./free.c) | memory handling functions
+[char.c](./char.c) | handler functions for ascii instructions
+[bf](./bf) | Advanced tasks: Brainf*ck programs
